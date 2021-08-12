@@ -2,3 +2,4 @@
 ---
 1. Strategy
 1. Observer
+1. Decorator
