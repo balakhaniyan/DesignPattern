@@ -4,8 +4,8 @@ namespace DesignPatterns
 {
     public abstract class Duck
     {
-        protected IQuack Quack;
-        protected IFly Fly;
+        protected IQuack Quack { get; set; }
+        protected IFly Fly { get; set; }
 
         public void Quacking()
         {

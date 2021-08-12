@@ -24,9 +24,9 @@ namespace DesignPatterns
     public class WeatherData : ISubject
     {
         private readonly IList<IObserver> _observers;
-        private float _temperature;
-        private float _humidity;
-        private float _pressure;
+        private float Temperature { get; set; }
+        private float Humidity { get; set; }
+        private float Pressure { get; set; }
 
         public WeatherData()
         {
@@ -48,7 +48,7 @@ namespace DesignPatterns
         {
             foreach (var observer in _observers)
             {
-                observer.Update(_temperature, _humidity, _pressure);
+                observer.Update(Temperature, Humidity, Pressure);
             }
         }
 
@@ -59,9 +59,9 @@ namespace DesignPatterns
 
         public void SetMeasurements(float temperature, float humidity, float pressure)
         {
-            _temperature = temperature;
-            _humidity = humidity;
-            _pressure = pressure;
+            Temperature = temperature;
+            Humidity = humidity;
+            Pressure = pressure;
             MeasurementsChanged();
         }
     }
